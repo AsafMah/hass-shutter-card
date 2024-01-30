@@ -39,6 +39,7 @@ class ShutterCard extends HTMLElement {
 
         let invertPercentage = false;
         if (entity && entity.invert_percentage) {
+          c = entity.invert_percentage;
           invertPercentage = entity.invert_percentage;
         }
 

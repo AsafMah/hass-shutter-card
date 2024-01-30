@@ -39,7 +39,6 @@ class ShutterCard extends HTMLElement {
 
         let invertPercentage = false;
         if (entity && entity.invert_percentage) {
-          c = entity.invert_percentage;
           invertPercentage = entity.invert_percentage;
         }
 
@@ -196,11 +195,11 @@ class ShutterCard extends HTMLElement {
                 
                 switch (command) {
                   case 'up':
-                      service = 'open_cover';
+                      service = invertPercentage ? 'close_cover' : 'open_cover';
                       break;
                       
                   case 'down':
-                      service = 'close_cover';
+                      service = invertPercentage ? 'open_cover' : 'close_cover';
                       break;
 
                   case 'stop':
